@@ -3,31 +3,40 @@ class number
 {
     public static void main(String args[])
     {
-        int n=0;
-        String w="";
+        int num=0;
+        String words="";
         Scanner sc=new Scanner(System.in);
-        System.out.println("Enter the number upto 4 digits");
-        n=sc.nextInt();
-        if(n>=10000)
+        System.out.println("Enter the number");
+        num=sc.nextInt();
+        if(num>10000)
         System.out.println("please enter a no. upto 4 digits");
-        else if(n==0)
+        else if(num==0)
         System.out.println("zero");
         else
         System.out.println("you find the number");
-        String one[]={"","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen",
-                     "fourteen","fifteen","sixteen","seventeen","Eighteen","nineteen"};
-        String ten[]={"","","twenty","thirty","fourty","fifty","sixty","seventy","eighty","ninty"};
-        if(n>1000)
-        w=w+one[n/1000]+" thousand ";
-        n=n%1000;
-        if(n>100)
-        w=w+one[n/100]+" hundred ";
-        n=n%100;
-        if(n>20)
-        w=w+ten[n/10]+" ";
-        n=n%10;
-        if(n>0)
-        w=w+one[n];
-        System.out.println("Digit in the no. format"+w);
+        String one[]={"","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen",
+                     "Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen"};
+        String ten[]={"","","Twenty","Thirty","Fourty","Fifty","Sixty","Seventy","Eighty","Ninty"};
+        
+        if(num>1000)
+        {
+        words=words+one[num/1000]+" Thousand ";
+        num=num%1000;
+        }
+        if(num>100)
+        {
+          words=words+one[num/100]+" Hundred ";
+          num=num%100;
+        }
+        if(num>=20)
+        {
+        words=words+ten[num/10]+" ";
+        num=num%10;
+        }
+        if(num>0)
+        words=words+one[num];
+        System.out.println("Digit in the no. format  "+words);
     }
-}
+}  
+
+            
